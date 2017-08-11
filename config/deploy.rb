@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock "3.9.0"
 
-set :application, "forum-temed.360bound.net"
+set :application, "temed-forum.360bound.net"
 set :repo_url, "git@github.com:profeg/discourse.git"
 set :branch, :dev
 # Default branch is :master
@@ -10,7 +10,6 @@ set :branch, :dev
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, -> { "/var/www/sites/#{fetch(:application)}" }
 set :puma_state, "#{shared_path}/tmp/sockets/puma.state"
-
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -28,11 +27,3 @@ append :linked_files, "config/database.yml", "config/secrets.yml", ".env", ".rub
 # Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for local_user is ENV['USER']
-# set :local_user, -> { `git config user.name`.chomp }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5

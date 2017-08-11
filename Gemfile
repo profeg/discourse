@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+
 # if there is a super emergency and rubygems is playing up, try
 #source 'http://production.cf.rubygems.org'
 
