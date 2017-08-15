@@ -1,9 +1,15 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 # if there is a super emergency and rubygems is playing up, try
 #source 'http://production.cf.rubygems.org'
 
 # does not install in linux ATM, so hack this for now
 gem 'bootsnap', require: false
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rvm'
+gem 'capistrano3-puma'
 
 def rails_master?
   ENV["RAILS_MASTER"] == '1'
