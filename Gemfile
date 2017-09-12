@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # if there is a super emergency and rubygems is playing up, try
 #source 'http://production.cf.rubygems.org'
 
+gem 'rest-client'
+
 # does not install in linux ATM, so hack this for now
 gem 'bootsnap', require: false
 gem 'capistrano'

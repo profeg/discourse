@@ -190,10 +190,7 @@ class SessionController < ApplicationController
 
     return invalid_credentials if params[:password].length > User.max_password_length
 
-    login = params[:login].strip
-    login = login[1..-1] if login[0] == "@"
-
-    if user = User.find_by_username_or_email(login)
+    if user = UserExternalAuth.new(params.slice(:login, :password).merge(ip_address: request.remote_ip, registration_ip_address: request.remote_ip)).user
 
       # If their password is correct
       unless user.confirm_password?(params[:password])
